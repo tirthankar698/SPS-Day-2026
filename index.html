@@ -5,411 +5,697 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>SPS Day 2026 · School of Physical Sciences, NISER</title>
+<title>SPS Day 2026 | NISER Bhubaneswar</title>
+
+<meta name="description"
+      content="SPS Day 2026 programme, 6–7 November, School of Physical Sciences, NISER Bhubaneswar.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --navy: #0B1B33;
-    --navy-2: #14294A;
-    --amber: #F2B33D;
-    --on-navy: #FFFFFF;
-    --on-navy-soft: #C9D3E3;
-    --page: #F4F6FA;
-    --surface: #FFFFFF;
-    --ink: #0B1B33;
-    --ink-soft: #46597A;
-    --line: #D8DFEA;
-    --tag-bg: #FFF3D6;
-    --tag-ink: #7A5200;
-    --focus: #1F6FEB;
-    --display: 'Space Grotesk', 'IBM Plex Sans', system-ui, sans-serif;
-    --body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+/* ================================================
+   COLOURS AND TYPOGRAPHY
+   ================================================ */
+
+:root {
+  --navy: #0B1B33;
+  --navy-light: #14294A;
+  --amber: #F2B33D;
+  --amber-pale: #FFF5DF;
+
+  --background: #F4F6FA;
+  --surface: #FFFFFF;
+  --ink: #0B1B33;
+  --muted: #52617A;
+  --border: #DCE3EE;
+
+  --blue-pale: #EAF1FA;
+  --green-pale: #EAF5EF;
+
+  --display: 'Space Grotesk', sans-serif;
+  --body: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #3979C8;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      color-scheme: dark;
-      --page: #08111F;
-      --surface: #0F1F38;
-      --ink: #EEF2F8;
-      --ink-soft: #A9B7CC;
-      --line: #23395C;
-      --tag-bg: #3A2C0B;
-      --tag-ink: #FFD27A;
-      --focus: #7FB2FF;
-    }
-  }
+/* ================================================
+   HERO
+   ================================================ */
 
-  * { box-sizing: border-box; }
-  [hidden] { display: none !important; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: #FFFFFF;
+  padding: 76px 24px 54px;
+}
 
-  html { scroll-behavior: smooth; }
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  right: -160px;
+  top: -230px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 85px rgba(255,255,255,.025),
+    0 0 0 170px rgba(255,255,255,.018);
+  pointer-events: none;
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-  }
+.hero-inner {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+}
 
-  body {
-    margin: 0;
-    background: var(--page);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.55;
-  }
+.school {
+  margin: 0 0 5px;
+  color: var(--amber);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .035em;
+}
 
-  :focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
+.institute {
+  margin: 0 0 42px;
+  max-width: 650px;
+  color: #C8D4E5;
+  font-size: 16px;
+}
 
-  /* ================= HERO ================= */
+.hero h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(72px, 12vw, 144px);
+  letter-spacing: -.055em;
+  line-height: .88;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.hero-description {
+  margin: 28px 0 0;
+  max-width: 620px;
+  color: #D6DFEC;
+  font-size: 18px;
+}
+
+/* ================================================
+   HERO DATE CARDS
+   ================================================ */
+
+.hero-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 760px;
+  margin-top: 48px;
+}
+
+.hero-day {
+  display: block;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+
+.hero-day:hover {
+  background: rgba(255,255,255,.11);
+  border-color: var(--amber);
+}
+
+.hero-day .day-label {
+  display: block;
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+}
+
+.hero-day .day-date {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--display);
+  font-size: clamp(22px, 3vw, 29px);
+  font-weight: 700;
+}
+
+.hero-day .day-hours {
+  display: block;
+  margin-top: 5px;
+  color: #D2DDEC;
+  font-size: 15px;
+}
+
+/* ================================================
+   STICKY NAVIGATION
+   ================================================ */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--navy-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+}
+
+.nav-inner {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-brand {
+  color: var(--amber);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 17px 16px 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  border-bottom-color: var(--amber);
+}
+
+/* ================================================
+   MAIN CONTENT
+   ================================================ */
+
+main {
+  max-width: 1080px;
+  margin: auto;
+  padding: 12px 24px 90px;
+}
+
+.day-section {
+  padding-top: 76px;
+  scroll-margin-top: 75px;
+}
+
+.day-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.date-number {
+  font-family: var(--display);
+  font-size: clamp(68px, 10vw, 108px);
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.07em;
+  color: var(--navy);
+}
+
+.day-heading-text {
+  flex: 1;
+}
+
+.day-eyebrow {
+  margin: 0 0 6px;
+  color: #9A6B0E;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.day-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.day-range {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ================================================
+   VENUE INFORMATION
+   ================================================ */
+
+.venue-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 26px;
+  padding: 13px 18px;
+  border-left: 4px solid var(--amber);
+  background: var(--amber-pale);
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+}
+
+.venue-strip strong {
+  white-space: nowrap;
+}
+
+/* ================================================
+   PROGRAMME TABLE / TIMELINE
+   ================================================ */
+
+.programme {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(11,27,51,.035);
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 160px minmax(0,1fr);
+  border-bottom: 1px solid var(--border);
+  min-height: 79px;
+}
+
+.event:last-child {
+  border-bottom: 0;
+}
+
+.event-time {
+  display: flex;
+  align-items: center;
+  padding: 17px 22px;
+  background: #F8FAFD;
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  border-right: 1px solid var(--border);
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 24px;
+}
+
+.event-main {
+  min-width: 0;
+}
+
+.event-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.event-subtitle {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.event-tag {
+  flex-shrink: 0;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 4px 11px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #52617A;
+  background: #EDF1F6;
+}
+
+/* ================================================
+   SPECIAL EVENT STYLES
+   ================================================ */
+
+.event.opening .event-content {
+  background: #FCFAF4;
+}
+
+.event.opening .event-tag {
+  background: var(--amber-pale);
+  color: #80560D;
+}
+
+.event.break .event-content,
+.event.break .event-time {
+  background: #F2F5F9;
+}
+
+.event.break .event-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.event.break .event-tag {
+  background: #E3E9F1;
+}
+
+.event.special .event-content {
+  background: var(--blue-pale);
+}
+
+.event.special .event-tag {
+  background: #D7E6F7;
+  color: #28588D;
+}
+
+.event.flash .event-content {
+  background: var(--amber-pale);
+}
+
+.event.flash .event-time {
+  background: #FFF1D0;
+}
+
+.event.flash .event-tag {
+  background: #F2B33D;
+  color: #3A2A08;
+}
+
+.event.poster .event-content {
+  background: var(--green-pale);
+}
+
+.event.poster .event-time {
+  background: #E1F0E8;
+}
+
+.event.poster .event-tag {
+  background: #D0E7DA;
+  color: #236344;
+}
+
+/* ================================================
+   DAY FOOTER
+   ================================================ */
+
+.day-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 16px;
+  padding: 13px 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.day-end strong {
+  font-family: var(--display);
+  font-size: 17px;
+  color: var(--navy);
+}
+
+/* ================================================
+   INFORMATION NOTE
+   ================================================ */
+
+.info-note {
+  margin-top: 70px;
+  padding: 24px 28px;
+  background: var(--blue-pale);
+  border-radius: 12px;
+  color: var(--navy);
+}
+
+.info-note h3 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 19px;
+}
+
+.info-note p {
+  margin: 0;
+  color: #435674;
+  font-size: 15px;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
+footer {
+  background: var(--navy);
+  color: #D2DCEA;
+  padding: 35px 24px 45px;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.footer-title {
+  margin: 0 0 6px;
+  color: #FFFFFF;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+footer p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+
+@media (max-width: 680px) {
 
   .hero {
-    position: relative;
-    overflow: hidden;
-    background: var(--navy);
-    color: var(--on-navy);
-    padding: 72px 24px 64px;
-  }
-
-  .hero-inner {
-    position: relative;
-    max-width: 1080px;
-    margin: 0 auto;
-  }
-
-  .hero svg.orbits {
-    position: absolute;
-    right: -120px;
-    top: 50%;
-    width: 720px;
-    height: 720px;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-
-  .school {
-    margin: 0 0 4px;
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--amber);
-  }
-
-  .institute {
-    margin: 0 0 40px;
-    color: var(--on-navy-soft);
-    font-size: 17px;
-    max-width: 34ch;
+    padding: 52px 20px 40px;
   }
 
   .hero h1 {
-    margin: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(64px, 13vw, 156px);
-    line-height: 0.88;
-    letter-spacing: -0.035em;
+    font-size: clamp(68px, 16vw, 110px);
   }
 
-  .hero h1 span {
-    display: block;
-    font-weight: 500;
-    color: var(--amber);
+  .hero-days {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
   }
 
-  .when-where {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 48px;
-    margin: 44px 0 0;
-    padding-top: 20px;
-    border-top: 2px solid var(--amber);
-    max-width: 760px;
+  .hero-day {
+    padding: 16px 20px;
   }
 
-  .when-where dt {
-    color: var(--on-navy-soft);
-    font-size: 15px;
+  .nav-inner {
+    padding: 0 15px;
   }
 
-  .when-where dd {
-    margin: 2px 0 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(22px, 3.2vw, 32px);
-    line-height: 1.15;
-  }
-
-  /* ================= NAVIGATION ================= */
-
-  nav.sections {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    background: var(--navy-2);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  nav.sections ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0 12px;
-    max-width: 1104px;
-    display: flex;
-    gap: 4px;
-    overflow-x: auto;
-  }
-
-  nav.sections a {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    min-height: 52px;
-    padding: 14px 14px 12px;
-    color: var(--on-navy);
-    text-decoration: none;
-    white-space: nowrap;
-    font-weight: 500;
-    border-bottom: 3px solid transparent;
-  }
-
-  nav.sections a:hover {
-    border-bottom-color: var(--amber);
-  }
-
-  nav.sections .count {
-    color: var(--on-navy-soft);
+  .nav-brand {
     font-size: 14px;
   }
 
-  /* ================= SECTIONS ================= */
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 16px 9px 13px;
+    font-size: 13px;
+  }
 
   main {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 24px 96px;
+    padding: 0 16px 65px;
   }
 
-  section {
-    padding-top: 72px;
-    scroll-margin-top: 52px;
+  .day-section {
+    padding-top: 56px;
   }
 
-  section > header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 8px 24px;
-    margin-bottom: 24px;
+  .day-heading {
+    gap: 15px;
   }
 
-  h2 {
-    margin: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+  .date-number {
+    font-size: 72px;
   }
 
-  .section-note {
-    margin: 0;
-    color: var(--ink-soft);
-    font-size: 16px;
+  .day-heading h2 {
+    font-size: 26px;
   }
 
-  /* ================= FACULTY ================= */
-
-  .faculty {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 2px solid var(--ink);
-  }
-
-  .faculty li {
-    display: grid;
-    grid-template-columns: minmax(200px, 1fr) 2fr;
-    gap: 4px 32px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .faculty .name {
-    margin: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.2;
-  }
-
-  .faculty .group {
-    margin: 4px 0 0;
-    color: var(--ink-soft);
+  .day-range {
     font-size: 15px;
   }
 
-  .faculty .talk {
-    margin: 0;
-    font-size: 19px;
-    line-height: 1.4;
+  .venue-strip {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
   }
 
-  .faculty .talk.untitled {
-    color: var(--ink-soft);
-    font-size: 16px;
+  .event {
+    grid-template-columns: 1fr;
   }
 
-  .tag {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 2px 10px;
-    border-radius: 999px;
-    background: var(--tag-bg);
-    color: var(--tag-ink);
+  .event-time {
+    padding: 12px 17px 4px;
+    border-right: 0;
+    background: var(--surface);
     font-size: 13px;
-    font-weight: 600;
   }
 
-  /* ================= FLASH TALKS ================= */
+  .event-content {
+    padding: 7px 17px 16px;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-  .flash {
-    list-style: none;
-    margin: 0;
+  .event-title {
+    font-size: 17px;
+  }
+
+  .event-tag {
+    font-size: 9px;
+    padding: 4px 7px;
+  }
+
+  .event.break .event-content {
+    padding-top: 6px;
+  }
+
+  .day-end {
+    padding: 10px 4px;
+  }
+
+  .info-note {
+    padding: 20px;
+  }
+}
+
+/* ================================================
+   PRINT
+   ================================================ */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .hero {
+    padding: 28px 0;
+  }
+
+  nav {
+    display: none;
+  }
+
+  main {
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px;
   }
 
-  .flash li {
-    padding: 16px 18px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
+  .day-section {
+    padding-top: 30px;
+    break-inside: avoid;
   }
 
-  .flash .name {
-    margin: 0;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
+  .programme {
+    box-shadow: none;
   }
 
-  .flash .sup {
-    margin: 2px 0 0;
-    color: var(--ink-soft);
-    font-size: 15px;
+  .event {
+    break-inside: avoid;
   }
-
-  /* ================= POSTERS ================= */
-
-  .poster-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 48px;
-    margin: 0;
-    padding: 24px 28px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-  }
-
-  .poster-info dt {
-    color: var(--ink-soft);
-    font-size: 15px;
-  }
-
-  .poster-info dd {
-    margin: 4px 0 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.3;
-  }
-
-  /* ================= FOOTER ================= */
 
   footer {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 32px 24px 48px;
-    color: var(--ink-soft);
-    font-size: 15px;
-    border-top: 1px solid var(--line);
+    padding: 18px 0;
   }
+}
 
-  /* ================= MOBILE ================= */
-
-  @media (max-width: 680px) {
-    .hero {
-      padding: 48px 20px 44px;
-    }
-
-    .hero svg.orbits {
-      right: -260px;
-      opacity: 0.7;
-    }
-
-    main {
-      padding: 0 20px 72px;
-    }
-
-    section {
-      padding-top: 56px;
-    }
-
-    .faculty li {
-      grid-template-columns: 1fr;
-    }
-
-    .faculty .talk {
-      margin-top: 8px;
-    }
-
-    .poster-info {
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .poster-info dd {
-      font-size: 20px;
-    }
-  }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- ==============================================
+     HERO
+     ============================================== -->
 
 <header class="hero">
-
-  <svg class="orbits" viewBox="0 0 720 720" aria-hidden="true">
-    <g fill="none" stroke="#FFFFFF"
-       stroke-opacity="0.08" stroke-width="1.5">
-
-      <ellipse cx="360" cy="360" rx="340" ry="110"
-               transform="rotate(-18 360 360)"/>
-
-      <ellipse cx="360" cy="360" rx="340" ry="110"
-               transform="rotate(42 360 360)"/>
-
-      <ellipse cx="360" cy="360" rx="340" ry="110"
-               transform="rotate(102 360 360)"/>
-    </g>
-
-    <circle cx="360" cy="360" r="9"
-            fill="#F2B33D" fill-opacity="0.5"/>
-  </svg>
 
   <div class="hero-inner">
 
@@ -427,285 +713,709 @@
       <span>2026</span>
     </h1>
 
-    <dl class="when-where">
-      <div>
-        <dt>Dates</dt>
-        <dd>6–7 November 2026</dd>
-      </div>
+    <p class="hero-description">
+      Two days of scientific talks, student presentations,
+      and conversations across the School of Physical Sciences.
+    </p>
 
-      <div>
-        <dt>Venue</dt>
-        <dd>Pathani Samanta Auditorium, NISER</dd>
-      </div>
-    </dl>
+    <div class="hero-days">
+
+      <a class="hero-day" href="#nov6">
+        <span class="day-label">Day 01 · Friday</span>
+        <span class="day-date">6 November</span>
+        <span class="day-hours">14:30 – 19:00</span>
+      </a>
+
+      <a class="hero-day" href="#nov7">
+        <span class="day-label">Day 02 · Saturday</span>
+        <span class="day-date">7 November</span>
+        <span class="day-hours">09:30 – 17:30</span>
+      </a>
+
+    </div>
 
   </div>
 
 </header>
 
-<!-- ================= NAVIGATION ================= -->
+<!-- ==============================================
+     NAVIGATION
+     ============================================== -->
 
-<nav class="sections" aria-label="Sections">
-  <ul>
+<nav aria-label="Programme navigation">
 
-    <li>
-      <a href="#faculty">
-        Faculty speakers
-        <span class="count" id="count-faculty"></span>
-      </a>
-    </li>
+  <div class="nav-inner">
 
-    <li>
-      <a href="#flash">
-        Student flash talks
-        <span class="count" id="count-flash"></span>
-      </a>
-    </li>
+    <span class="nav-brand">SPS Day 2026</span>
 
-    <li>
-      <a href="#posters">
-        Posters
-      </a>
-    </li>
+    <div class="nav-links">
+      <a href="#nov6">6 November</a>
+      <a href="#nov7">7 November</a>
+    </div>
 
-  </ul>
+  </div>
+
 </nav>
 
 <main>
 
-  <!-- ================= FACULTY ================= -->
+<!-- ==============================================
+     DAY 1 — 6 NOVEMBER
+     ============================================== -->
 
-  <section id="faculty" aria-labelledby="faculty-h">
+<section id="nov6" class="day-section"
+         aria-labelledby="nov6-heading">
 
-    <header>
-      <h2 id="faculty-h">Faculty speakers</h2>
+  <div class="day-heading">
 
-      <p class="section-note">
-        Each talk is 15 minutes, followed by
-        5 minutes of questions.
-      </p>
-    </header>
+    <div class="date-number">06</div>
 
-    <ul class="faculty" id="faculty-list"></ul>
+    <div class="day-heading-text">
 
-  </section>
+      <p class="day-eyebrow">Day 01 · Friday</p>
 
-  <!-- ================= FLASH TALKS ================= -->
+      <h2 id="nov6-heading">
+        November 2026
+      </h2>
 
-  <section id="flash" aria-labelledby="flash-h">
-
-    <header>
-      <h2 id="flash-h">Student flash talks</h2>
-    </header>
-
-    <ul class="flash" id="flash-list"></ul>
-
-  </section>
-
-  <!-- ================= POSTERS ================= -->
-
-  <section id="posters" aria-labelledby="posters-h">
-
-    <header>
-      <h2 id="posters-h">Posters</h2>
-    </header>
-
-    <dl class="poster-info">
-
-      <div>
-        <dt>Time</dt>
-        <dd>17:00–19:00</dd>
+      <div class="day-range">
+        14:30 – 19:00
       </div>
 
-      <div>
-        <dt>Venue</dt>
-        <dd>Third Floor, NISER Library</dd>
+    </div>
+
+  </div>
+
+  <div class="venue-strip">
+    <strong>Venue</strong>
+    <span>
+      Pathani Samanta Auditorium, NISER
+      (except the poster session)
+    </span>
+  </div>
+
+  <ol class="programme">
+
+    <!-- INAUGURATION -->
+
+    <li class="event opening">
+
+      <div class="event-time">14:30 – 14:45</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Inauguration
+          </h3>
+          <p class="event-subtitle">
+            Director's address
+          </p>
+        </div>
+
+        <span class="event-tag">Opening</span>
+
       </div>
 
-    </dl>
+    </li>
 
-  </section>
+    <!-- SUBHASHIS BASAK -->
+
+    <li class="event">
+
+      <div class="event-time">14:50 – 15:10</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Subhashis Basak
+          </h3>
+
+          <p class="event-subtitle">
+            SPS@20
+          </p>
+
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- NAJMUL HAQUE -->
+
+    <li class="event">
+
+      <div class="event-time">15:10 – 15:30</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Najmul Haque
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- H N GHOSH -->
+
+    <li class="event">
+
+      <div class="event-time">15:30 – 15:50</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            H. N. Ghosh
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- TAPAN MISHRA -->
+
+    <li class="event">
+
+      <div class="event-time">15:50 – 16:10</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Tapan Mishra
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- SUBHANKAR BEDANTA -->
+
+    <li class="event">
+
+      <div class="event-time">16:10 – 16:30</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Subhankar Bedanta
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- FLASH TALKS SESSION 1 -->
+
+    <li class="event flash">
+
+      <div class="event-time">16:30 – 17:00</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Student Flash Talks
+          </h3>
+
+          <p class="event-subtitle">
+            Session 1 · 6 November
+          </p>
+
+        </div>
+
+        <span class="event-tag">Flash Talks</span>
+
+      </div>
+
+    </li>
+
+    <!-- POSTER SESSION -->
+
+    <li class="event poster">
+
+      <div class="event-time">17:00 – 19:00</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Poster Session
+          </h3>
+
+          <p class="event-subtitle">
+            Venue: Third Floor, NISER Library
+          </p>
+
+        </div>
+
+        <span class="event-tag">Posters</span>
+
+      </div>
+
+    </li>
+
+  </ol>
+
+  <div class="day-end">
+
+    <span>End of Day 01</span>
+
+    <strong>19:00</strong>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================================
+     DAY 2 — 7 NOVEMBER
+     ============================================== -->
+
+<section id="nov7" class="day-section"
+         aria-labelledby="nov7-heading">
+
+  <div class="day-heading">
+
+    <div class="date-number">07</div>
+
+    <div class="day-heading-text">
+
+      <p class="day-eyebrow">Day 02 · Saturday</p>
+
+      <h2 id="nov7-heading">
+        November 2026
+      </h2>
+
+      <div class="day-range">
+        09:30 – 17:30
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="venue-strip">
+
+    <strong>Venue</strong>
+
+    <span>
+      Pathani Samanta Auditorium, NISER
+    </span>
+
+  </div>
+
+  <ol class="programme">
+
+    <!-- KUSH SAHA -->
+
+    <li class="event">
+
+      <div class="event-time">09:30 – 09:50</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Kush Saha
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- ASHOK MOHAPATRA -->
+
+    <li class="event">
+
+      <div class="event-time">09:50 – 10:10</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Ashok Mohapatra
+          </h3>
+
+          <p class="event-subtitle">
+            Exploring quantum phenomena with time slits
+          </p>
+
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- TUHIN GHOSH -->
+
+    <li class="event">
+
+      <div class="event-time">10:10 – 10:30</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Tuhin Ghosh
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- ANAMITRA MUKHERJEE -->
+
+    <li class="event">
+
+      <div class="event-time">10:30 – 10:50</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Anamitra Mukherjee
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- SANJAY SWAIN -->
+
+    <li class="event">
+
+      <div class="event-time">10:50 – 11:10</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Sanjay Swain
+          </h3>
+
+          <p class="event-subtitle">
+            Amazing story of a telescope made of ice
+          </p>
+
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- MORNING BREAK -->
+
+    <li class="event break">
+
+      <div class="event-time">11:15 – 11:40</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Break
+          </h3>
+        </div>
+
+        <span class="event-tag">Break</span>
+
+      </div>
+
+    </li>
+
+    <!-- SHOVON PAL -->
+
+    <li class="event">
+
+      <div class="event-time">11:45 – 12:05</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Shovon Pal
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- AI SESSION -->
+
+    <li class="event special">
+
+      <div class="event-time">12:05 – 12:50</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            AI Session
+          </h3>
+
+          <p class="event-subtitle">
+            Special session
+          </p>
+
+        </div>
+
+        <span class="event-tag">Special</span>
+
+      </div>
+
+    </li>
+
+    <!-- LUNCH -->
+
+    <li class="event break">
+
+      <div class="event-time">12:50 – 14:00</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Lunch Break
+          </h3>
+        </div>
+
+        <span class="event-tag">Lunch</span>
+
+      </div>
+
+    </li>
+
+    <!-- COLIN BENJAMIN -->
+
+    <li class="event">
+
+      <div class="event-time">14:00 – 14:20</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Colin Benjamin
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- A V ANIL KUMAR -->
+
+    <li class="event">
+
+      <div class="event-time">14:20 – 14:40</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            A. V. Anil Kumar
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- AMARESH JAISWAL -->
+
+    <li class="event">
+
+      <div class="event-time">14:40 – 15:00</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Amaresh Jaiswal
+          </h3>
+        </div>
+
+        <span class="event-tag">Talk</span>
+
+      </div>
+
+    </li>
+
+    <!-- AFTERNOON BREAK -->
+
+    <li class="event break">
+
+      <div class="event-time">15:10 – 15:30</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+          <h3 class="event-title">
+            Break
+          </h3>
+        </div>
+
+        <span class="event-tag">Break</span>
+
+      </div>
+
+    </li>
+
+    <!-- ORGANISERS SESSION -->
+
+    <li class="event special">
+
+      <div class="event-time">15:30 – 16:10</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Organisers' Session
+          </h3>
+
+        </div>
+
+        <span class="event-tag">Session</span>
+
+      </div>
+
+    </li>
+
+    <!-- FLASH TALKS SESSION 2 -->
+
+    <li class="event flash">
+
+      <div class="event-time">16:15 – 16:35</div>
+
+      <div class="event-content">
+
+        <div class="event-main">
+
+          <h3 class="event-title">
+            Student Flash Talks
+          </h3>
+
+          <p class="event-subtitle">
+            Session 2 · 7 November
+          </p>
+
+        </div>
+
+        <span class="event-tag">Flash Talks</span>
+
+      </div>
+
+    </li>
+
+  </ol>
+
+  <div class="day-end">
+
+    <span>Programme concludes by</span>
+
+    <strong>17:30</strong>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================================
+     GENERAL INFORMATION
+     ============================================== -->
+
+<aside class="info-note">
+
+  <h3>Programme Information</h3>
+
+  <p>
+    All timings are in Indian Standard Time (IST).
+    Faculty talks are scheduled for 15 minutes,
+    followed by 5 minutes for questions.
+    The programme is subject to minor changes.
+  </p>
+
+</aside>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+
+<!-- ==============================================
+     FOOTER
+     ============================================== -->
 
 <footer>
-  SPS Day 2026,
-  School of Physical Sciences,
-  NISER Bhubaneswar.
+
+  <div class="footer-inner">
+
+    <p class="footer-title">
+      SPS Day 2026
+    </p>
+
+    <p>
+      6–7 November 2026
+    </p>
+
+    <p>
+      School of Physical Sciences
+    </p>
+
+    <p>
+      National Institute of Science Education and Research,
+      Bhubaneswar
+    </p>
+
+  </div>
+
 </footer>
-
-<script>
-
-/* ========================================================
-   FACULTY SPEAKERS
-
-   confirmed: false displays "To be confirmed".
-   Leave title empty if not yet announced.
-   ======================================================== */
-
-const FACULTY = [
-  { name: "Amaresh Jaiswal",
-    group: "Theoretical High Energy Physics",
-    title: "", confirmed: true },
-
-  { name: "A. V. Anil Kumar",
-    group: "Statistical Mechanics and Modelling of Soft Matter",
-    title: "", confirmed: true },
-
-  { name: "Najmul Haque",
-    group: "Theoretical High Energy Physics",
-    title: "", confirmed: true },
-
-  { name: "Kush Saha",
-    group: "Condensed Matter Physics",
-    title: "", confirmed: true },
-
-  { name: "Anamitra Mukherjee",
-    group: "Condensed Matter Physics",
-    title: "", confirmed: true },
-
-  { name: "Shovon Pal",
-    group: "Optics",
-    title: "", confirmed: false },
-
-  { name: "Subhashis Basak",
-    group: "Lattice QCD",
-    title: "SPS@20", confirmed: true },
-
-  { name: "Sanjay Swain",
-    group: "Experimental High Energy Physics",
-    title: "Amazing story of a telescope made of ice",
-    confirmed: true },
-
-  { name: "Subhankar Bedanta",
-    group: "Condensed Matter Experiment",
-    title: "", confirmed: true },
-
-  { name: "Tapan Mishra",
-    group: "Condensed Matter Theory",
-    title: "", confirmed: true },
-
-  { name: "Ashok Mohapatra",
-    group: "Condensed Matter Experiment",
-    title: "Exploring quantum phenomena with time slits",
-    confirmed: true },
-
-  { name: "Tuhin Ghosh",
-    group: "Cosmology",
-    title: "", confirmed: true },
-
-  { name: "Pulak Banerjee",
-    group: "Theoretical High Energy Physics",
-    title: "Precision Physics", confirmed: true },
-
-  { name: "Tirthankar Banerjee",
-    group: "Nonequilibrium Statistical Mechanics and Soft Matter",
-    title: "Soft systems out of equilibrium",
-    confirmed: true },
-
-  { name: "Colin Benjamin",
-    group: "Quantum Information",
-    title: "", confirmed: false },
-
-  { name: "H. N. Ghosh",
-    group: "Phonons",
-    title: "", confirmed: false }
-];
-
-/* ================= STUDENT FLASH TALKS ================= */
-
-const FLASH_TALKS = [
-  { name: "Syed Jaffri", supervisor: "Manoj" },
-  { name: "Aditi Rath", supervisor: "Colin Benjamin" },
-  { name: "Suryakanta Mishra", supervisor: "" },
-  { name: "Joyeta Saha", supervisor: "Joydeep" },
-  { name: "Nabendu Mondal", supervisor: "Joydeep" },
-  { name: "Hemant Lohumi", supervisor: "Joydeep" },
-  { name: "Payal Swami", supervisor: "H. N. Ghosh" },
-  { name: "Aldrin B. E.", supervisor: "Sumedha" },
-  { name: "Tanmoy Pati", supervisor: "Narayan" }
-];
-
-/* ================= HELPER ================= */
-
-function el(tag, cls, text) {
-  const n = document.createElement(tag);
-
-  if (cls) {
-    n.className = cls;
-  }
-
-  if (text != null) {
-    n.textContent = text;
-  }
-
-  return n;
-}
-
-/* ================= RENDER FACULTY ================= */
-
-const fList = document.getElementById('faculty-list');
-
-FACULTY.forEach(f => {
-  const li = el('li');
-
-  const who = el('div');
-
-  who.append(
-    el('p', 'name', f.name),
-    el('p', 'group', f.group)
-  );
-
-  const what = el('div');
-
-  what.append(
-    f.title
-      ? el('p', 'talk', f.title)
-      : el('p', 'talk untitled',
-           'Talk title to be announced')
-  );
-
-  if (!f.confirmed) {
-    what.append(
-      el('span', 'tag', 'To be confirmed')
-    );
-  }
-
-  li.append(who, what);
-  fList.append(li);
-});
-
-/* ================= RENDER FLASH TALKS ================= */
-
-const flList = document.getElementById('flash-list');
-
-FLASH_TALKS.forEach(t => {
-  const li = el('li');
-
-  li.append(
-    el('p', 'name', t.name)
-  );
-
-  if (t.supervisor) {
-    li.append(
-      el('p', 'sup', 'Supervisor: ' + t.supervisor)
-    );
-  }
-
-  flList.append(li);
-});
-
-/* ================= COUNTS ================= */
-
-document.getElementById('count-faculty')
-  .textContent = FACULTY.length;
-
-document.getElementById('count-flash')
-  .textContent = FLASH_TALKS.length;
-
-</script>
 
 </body>
 </html>
