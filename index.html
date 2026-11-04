@@ -89,6 +89,27 @@ a { color: inherit; }
   margin: 0 auto;
 }
 
+.hero-branding {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 42px;
+}
+
+.hero-institution {
+  min-width: 0;
+}
+
+.anniversary-logo {
+  display: block;
+  width: 180px;
+  height: 115px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: top right;
+}
+
 .school {
   margin: 0 0 5px;
   color: var(--amber);
@@ -98,7 +119,7 @@ a { color: inherit; }
 }
 
 .institute {
-  margin: 0 0 42px;
+  margin: 0;
   max-width: 650px;
   color: #C8D4E5;
   font-size: 16px;
@@ -662,6 +683,16 @@ footer p {
     padding: 52px 20px 40px;
   }
 
+  .hero-branding {
+    gap: 12px;
+    margin-bottom: 34px;
+  }
+
+  .anniversary-logo {
+    width: 108px;
+    height: 90px;
+  }
+
   .hero h1 {
     font-size: clamp(68px, 16vw, 110px);
   }
@@ -818,14 +849,28 @@ footer p {
 
   <div class="hero-inner">
 
-    <p class="school">
-      School of Physical Sciences
-    </p>
+    <div class="hero-branding">
 
-    <p class="institute">
-      National Institute of Science Education and Research,
-      Bhubaneswar
-    </p>
+      <div class="hero-institution">
+        <p class="school">
+          School of Physical Sciences
+        </p>
+
+        <p class="institute">
+          National Institute of Science Education and Research,
+          Bhubaneswar
+        </p>
+      </div>
+
+      <img
+        class="anniversary-logo"
+        src="NISER@20 Logo_Final_03Sept2026_HD.png"
+        alt="NISER at 20 anniversary logo"
+        width="180"
+        height="115"
+      >
+
+    </div>
 
     <h1>
       SPS Day
@@ -1065,7 +1110,6 @@ footer p {
                 <tr><td>16:39</td><td>Subhadeep Mandal</td></tr>
                 <tr><td>16:42</td><td>Sarjeeta Kalubhai Gami</td></tr>
                 <tr><td>16:45</td><td>Dipanwita Mondal</td></tr>
-               
                 <tr><td>16:48</td><td>Sawan</td></tr>
                 <tr><td>16:51</td><td>Syed Jaffri</td></tr>
                 <tr><td>16:54</td><td>Dr Madalasa Mandal</td></tr>
@@ -1238,7 +1282,7 @@ footer p {
       <div class="event-content">
         <div class="event-main">
           <h3 class="event-title">Colin Benjamin</h3>
-              <p class="event-subtitle">
+          <p class="event-subtitle">
             Quantum Noise, Josephson Diodes, Quantum Walks, and Social Dilemmas: Four Ways to Think Differently About Science
           </p>
         </div>
@@ -1266,7 +1310,7 @@ footer p {
       </div>
     </li>
 
-       <li class="event">
+    <li class="event">
       <div class="event-time">15:00 – 15:20</div>
       <div class="event-content">
         <div class="event-main">
@@ -1308,8 +1352,6 @@ footer p {
         <span class="event-tag">Talk</span>
       </div>
     </li>
-
-   
 
     <!-- SATURDAY FLASH TALKS -->
 
